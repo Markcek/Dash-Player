@@ -12,7 +12,6 @@
         <a href="https://github.com/Dash-Industry-Forum/dash.js/wiki">dash.js</a> framework</p>
         <div>
              <video id="videoPlayer" controls></video>
-            <button onclick="videoStop()">Pause the video</button>
          </div>
          <script>
              (function(){
@@ -20,11 +19,6 @@
                  var player = dashjs.MediaPlayer().create();
                  player.initialize(document.querySelector("#videoPlayer"), url, true);
              })();
-
-             function videoStop(){
-                  //player.pause();
-                  alert("test!");
-             }
          </script>
   </body>
 </html>
