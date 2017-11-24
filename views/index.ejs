@@ -8,9 +8,22 @@
   <body>
     <body>
       <h1>Simple Dash player</h1>
-      <p>This is a simple web application that use the <a href="https://github.com/Dash-Industry-Forum/dash.js/wiki">dash.js</a> framework</p>
-       <div>
-           <video data-dashjs-player autoplay src="https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd" controls></video>
-       </div>
+      <p>This is a simple web application that use the
+        <a href="https://github.com/Dash-Industry-Forum/dash.js/wiki">dash.js</a> framework</p>
+        <div>
+             <video id="videoPlayer" controls></video>
+            <button onclick="videoStop()">Pause the video</button>
+         </div>
+         <script>
+             (function(){
+                 var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+                 var player = dashjs.MediaPlayer().create();
+                 player.initialize(document.querySelector("#videoPlayer"), url, true);
+             })();
+
+             function videoStop(){
+                  player.pause();
+             };
+         </script>
   </body>
 </html>
